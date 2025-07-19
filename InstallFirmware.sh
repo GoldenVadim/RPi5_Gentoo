@@ -1,6 +1,7 @@
 #!/bin/sh
 
-DEST=/mnt # or /mnt/gentoo for example.
+WORK=.
+DEST=Root # or /mnt/gentoo for example.
 BRCM=$DEST/lib/firmware/brcm
 sudo mkdir -p $BRCM
 
