@@ -1,9 +1,11 @@
 #!/bin/sh
 
 DISK=/dev/sda # /mnt/mmcblk0 for RPi 5
+DEST=Root
 
 sudo umount $DISK*
-sudo mount /dev/sda2 Root
-sudo mount /dev/sda1 Root/boot
+mkdir -p $DEST/boot
+sudo mount /dev/sda2 $DEST
+sudo mount /dev/sda1 $DEST/boot
 
 lsblk
