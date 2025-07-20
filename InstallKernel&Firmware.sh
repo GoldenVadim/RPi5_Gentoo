@@ -1,8 +1,8 @@
 #!/bin/sh
 
-# Mount.sh
-# /dev/sda2 -> Root      | /dev/mmcblk0p2
-# /dev/sda1 -> Root/boot | /dev/mmcblk0p1
+# Mount.sh; you can change DEST variable in script
+# /dev/sda2 -> DEST      | /dev/mmcblk0p2
+# /dev/sda1 -> DEST/boot | /dev/mmcblk0p1
 
 # Initialization
 WORK=.
