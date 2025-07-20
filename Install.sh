@@ -10,7 +10,7 @@ DEST=Root # or /mnt/gentoo for example.
 BRCM=$DEST/lib/firmware/brcm
 
 # Root filesystem
-tar xvpf stage3-arm64*.tar.xz --numeric-owner --xattrs-include="*.*" -C $DEST
+sudo tar xvpf stage3-arm64*.tar.xz --numeric-owner --xattrs-include="*.*" -C $DEST
 
 # Kernel & modules
 sudo cp -v ${WORK}/firmware/boot/bcm2712-rpi-5-b.dtb ${DEST}/boot/
