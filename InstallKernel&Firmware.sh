@@ -12,15 +12,15 @@ sudo mkdir -p $BRCM
 
 # Kernel
 git clone --depth=1 https://github.com/raspberrypi/firmware.git
-cp ${WORK}/firmware/boot/bcm2712-rpi-5-b.dtb ${DEST}/boot/
-cp ${WORK}/firmware/boot/fixup_cd.dat ${DEST}/boot/
-cp ${WORK}/firmware/boot/fixup.dat ${DEST}/boot/
-cp ${WORK}/firmware/boot/start_cd.elf ${DEST}/boot/
-cp ${WORK}/firmware/boot/start.elf ${DEST}/boot/
-cp ${WORK}/firmware/boot/bootcode.bin ${DEST}/boot/
-cp ${WORK}/firmware/boot/kernel_2712.img ${DEST}/boot/
-cp -r ${WORK}/firmware/boot/overlays ${DEST}/boot/
-cp -r ${WORK}/firmware/modules ${DEST}/lib/
+sudo cp ${WORK}/firmware/boot/bcm2712-rpi-5-b.dtb ${DEST}/boot/
+sudo cp ${WORK}/firmware/boot/fixup_cd.dat ${DEST}/boot/
+sudo cp ${WORK}/firmware/boot/fixup.dat ${DEST}/boot/
+sudo cp ${WORK}/firmware/boot/start_cd.elf ${DEST}/boot/
+sudo cp ${WORK}/firmware/boot/start.elf ${DEST}/boot/
+sudo cp ${WORK}/firmware/boot/bootcode.bin ${DEST}/boot/
+sudo cp ${WORK}/firmware/boot/kernel_2712.img ${DEST}/boot/
+sudo cp -r ${WORK}/firmware/boot/overlays ${DEST}/boot/
+sudo cp -r ${WORK}/firmware/modules ${DEST}/lib/
 
 # Wi-Fi
 git clone --depth=1 https://github.com/RPi-Distro/firmware-nonfree.git
