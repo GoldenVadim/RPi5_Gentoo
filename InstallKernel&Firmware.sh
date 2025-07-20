@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# Mount.sh
+# /dev/sda2 -> Root      | /dev/mmcblk0p2
+# /dev/sda1 -> Root/boot | /dev/mmcblk0p1
+
 # Initialization
 WORK=.
 DEST=Root # or /mnt/gentoo for example.
@@ -16,6 +20,7 @@ cp ${WORK}/firmware/boot/start.elf ${DEST}/boot/
 cp ${WORK}/firmware/boot/bootcode.bin ${DEST}/boot/
 cp ${WORK}/firmware/boot/kernel_2712.img ${DEST}/boot/
 cp -r ${WORK}/firmware/boot/overlays ${DEST}/boot/
+cp -r ${WORK}/firmware/modules ${DEST}/lib/
 
 # Wi-Fi
 git clone --depth=1 https://github.com/RPi-Distro/firmware-nonfree.git
