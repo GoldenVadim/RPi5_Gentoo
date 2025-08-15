@@ -7,9 +7,10 @@ file stage3-arm64*
 sudo tar xvpf stage3-arm64*.tar.xz --numeric-owner --xattrs-include="*.*" -C $DEST
 
 echo "Run these commands if you are installed with systemd profile:"
-echp "systemd-machine-id-setup --root=$DEST"
-echo "systemctl --root=$DEST preset-all"
-echo "systemctl --root=$DEST preset-all --global"
+echo "systemd-firstboot --root=${DEST} --reset --prompt"
+echo "systemd-machine-id-setup --root=${DEST}"
+echo "systemctl --root=${DEST} preset-all"
+echo "systemctl --root=${DEST} preset-all --global"
 
 echo "Password of root will be 'raspberry'."
 sed -i "1c$(cat shadow)" $DEST/etc/shadow
