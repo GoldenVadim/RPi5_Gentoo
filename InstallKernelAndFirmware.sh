@@ -25,11 +25,5 @@ sudo ln -sv brcmfmac43455-sdio.txt $BRCM/brcmfmac43455-sdio.raspberrypi,5-model-
 sudo cp -v ${WORK}/bluez-firmware/debian/firmware/broadcom/BCM4345C0.hcd $BRCM
 sudo ln -sv BCM4345C0.hcd $BRCM/BCM4345C0.raspberrypi,5-model-b.hcd
 
-# Manually if you installing SystemD profile
-#systemd-machine-id-setup --root=$DEST
-#systemctl --root=$DEST preset-all          | System services
-#systemctl --root=$DEST preset-all --global | User services
-
 ls $DEST
 ls -l $BRCM
-
