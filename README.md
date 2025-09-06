@@ -7,6 +7,5 @@ git clone --depth 1 --recurse-submodules https://github.com/GoldenVadim/RPi5_Gen
 ```sh
 cd RPi5_Gentoo
 ./Mount.sh
-./InstallStage3.sh
-./InstallKernelAndFirmware.sh
+./Install.sh
 ```
