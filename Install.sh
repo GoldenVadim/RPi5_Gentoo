@@ -15,7 +15,8 @@ sudo cp -v ${WORK}/firmware/boot/start.elf ${DEST}/boot/
 sudo cp -v ${WORK}/firmware/boot/bootcode.bin ${DEST}/boot/
 sudo cp -v ${WORK}/firmware/boot/kernel_2712.img ${DEST}/boot/
 sudo cp -rv ${WORK}/firmware/boot/overlays ${DEST}/boot/
-sudo cp -rv ${WORK}/firmware/modules ${DEST}/lib/
+sudo cp -rv ${WORK}/firmware/modules/*-v8l-16k ${DEST}/lib/
+sudo cp -v ${WORK}/firmware/extra/System_2712.map ${DEST}/boot
 
 sudo mkdir -p $BRCM
 
