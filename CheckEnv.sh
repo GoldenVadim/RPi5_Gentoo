@@ -1,7 +1,7 @@
 #!/bin/sh
-. ./SetupEnv.sh
 
-echo Work path: $WORK
-echo Disk block: $DISK
-echo Install destination/mountpoint: $DEST
-echo Broadcom firmware path: $BRCM
+if [ -z $WORK ] || [ -z $DISK ] || [ -z $DEST ] || [ -z $BRCM ]; then
+    echo 'Please, run `. ./SetupEnv.sh`'
+    exit 1;
+else exit 0;
+fi

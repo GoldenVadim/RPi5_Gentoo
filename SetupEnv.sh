@@ -1,11 +1,13 @@
 #!/bin/sh
 # Script for initializing environment variables
-#  WORK=~/Documents/RaspberryPi5/Gentoo | Path to required files
-#  DEST=/mnt/gentoo | Path to root filesystem
+#  WORK | Path to required files
+#  DISK | Path to disk block
+#  DEST | Mountpoint for mounting $DISK1 and $DISK2
 #  BRCM is used for installing Wi-Fi and Bluetooth firmware
-# Manual running is unneeded
 
-export WORK=.
+export WORK=$PWD
 export DISK=/dev/sda
-export DEST=Root
+export DEST=$WORK/Root
 export BRCM=$DEST/lib/firmware/brcm
+
+echo "Work path: ${WORK}; Disk block: ${DISK}; Mount destination: ${DEST}; BRCM: ${BRCM}"
