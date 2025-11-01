@@ -1,4 +1,14 @@
 #!/bin/sh
+# ---------------------------------------------
+# Please, make sure you have MBR partition type
+# with first partition as FAT32 for boot files
+# and second partition for root.
+# ---------------------------------------------
+#                    Example:
+# /dev/sda1 Root/boot
+# /dev/sda2 Root
+# ---------------------------------------------
+
 ./CheckEnv.sh || exit 1;
 
 file $DISK || { echo "/!\ '${DISK}' is not found."; exit 1; }
