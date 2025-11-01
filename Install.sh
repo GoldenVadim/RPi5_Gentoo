@@ -9,16 +9,17 @@ ls -l $BRCM
 ls $DEST
 echo
 
+echo '/!\ Changing password of root to `raspberry`.'
+sed -i "1c$(cat shadow)" $DEST/etc/shadow || echo ' *  Unable to change password using `sed`. Please do it manually.'
+echo
+
 echo '/!\ Run these commands if you are installed with systemd profile:'
 echo " * systemd-firstboot --root=${DEST} --reset --prompt"
+echo " * systemd-machine-id-setup --root=${DEST}"
 echo " * systemctl --root=${DEST} preset-all"
 echo " * systemctl --root=${DEST} preset-all --global"
 echo
 
-echo '/!\ Password of root will be `raspberry`.'
-sed -i "1c$(cat shadow)" $DEST/etc/shadow
-echo
-
-echo "/!\ Comment this string in ${DEST}/etc/inittab for OpenRC profiles"
-echo ' f0:12345:respawn:/sbin/agetty 9600 ttyAMA0 vt100'
+echo "/!\ Comment this string in ${DEST}/etc/inittab if you will use profile with OpenRC"
+echo '    f0:12345:respawn:/sbin/agetty 9600 ttyAMA0 vt100'
 echo
